@@ -17,10 +17,10 @@ function sortList(list) {
 
 function getEmployees(list) {
   return [...list.children].map((employee) => ({
-    name: employee.textContent.trim(),
+    name: employee.childNodes[0].data.trim(),
     position: employee.dataset.position,
     salary: getSalaryAsNum(employee.dataset.salary),
-    age: employee.dataset.age,
+    age: +employee.dataset.age,
   }));
 }
 
